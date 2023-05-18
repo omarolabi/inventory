@@ -1,0 +1,111 @@
+@use "sass:map";
+@use "../../variables";
+@use "../../mixins";
+
+.product {
+  @include mixins.box-level-2;
+}
+
+.actions {
+  padding: 0 variables.$spacing variables.$spacing;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  p {
+    font-size: map.get(variables.$font-sizes, big);
+    margin-right: variables.$spacing;
+  }
+}
+
+.body {
+  margin: variables.$spacing * 2 variables.$spacing * 2;
+  border: variables.$body-border;
+  border-radius: variables.$border-radius;
+
+  h4 {
+    @include mixins.title-h4;
+    padding: variables.$spacing;
+    border-bottom: variables.$body-border;
+  }
+
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    list-style: none;
+    text-transform: capitalize;
+    border-right: variables.$body-border;
+
+    .header {
+      border-bottom: variables.$body-border;
+    }
+
+    span {
+      display: inline-block;
+      text-align: center;
+      padding: variables.$unit;
+    }
+
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+}
+
+h3 {
+  @include mixins.title-h3;
+  padding: variables.$spacing;
+  border-bottom: 1px solid map.get(variables.$colors, grey);
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: variables.$unit variables.$spacing;
+  margin: 0;
+  text-decoration: none;
+  background: map.get(variables.$colors, primary);
+  color: map.get(variables.$colors, white);
+  font-family: variables.$font-family;
+  font-size: map.get(variables.$font-sizes, small);
+  cursor: pointer;
+  text-align: center;
+  appearance: none;
+  border-radius: variables.$border-radius;
+  box-shadow: variables.$button-shadow;
+  opacity: 0.8;
+  transition: all 0.2s;
+  text-transform: uppercase;
+
+  &:disabled {
+    box-shadow: none;
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
+    opacity: 1;
+  }
+}
+
+.available {
+  color: map.get(variables.$colors, ok);
+}
+
+.not-available {
+  color: map.get(variables.$colors, ko);
+}

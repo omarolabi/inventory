@@ -1,0 +1,50 @@
+@use "sass:map";
+@use "./variables";
+
+@mixin box-level-1 {
+  display: flex;
+  flex-direction: column;
+  background-color: map.get(variables.$colors, almost-white);
+  border-radius: variables.$border-radius;
+  padding: variables.$spacing variables.$spacing 0;
+  box-shadow: variables.$box-shadow;
+}
+
+@mixin box-level-2 {
+  background-color: map.get(variables.$colors, white);
+  border-radius: variables.$border-radius;
+  box-shadow: variables.$box-shadow;
+  margin-bottom: variables.$spacing;
+}
+
+@mixin title-h1 {
+  font-size: map.get(variables.$font-sizes, main-title);
+  color: map.get(variables.$colors, white);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+@mixin title-h2 {
+  font-size: map.get(variables.$font-sizes, big);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: map.get(variables.$colors, dark-grey);
+  margin: 0;
+}
+
+@mixin title-h3 {
+  font-size: map.get(variables.$font-sizes, medium);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: map.get(variables.$colors, dark-grey);
+  margin: 0;
+}
+
+@mixin title-h4 {
+  font-size: map.get(variables.$font-sizes, small);
+  color: map.get(variables.$colors, dark-grey);
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0;
+}

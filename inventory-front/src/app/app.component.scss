@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "../variables";
+@use "../mixins";
+
+$product-list-width: 420px;
+$inventory-width: 150px;
+
+h1 {
+  @include mixins.title-h1;
+  padding: variables.$spacing;
+  background-color: map.get(variables.$colors, primary);
+}
+
+.app-shell {
+  display: flex;
+  justify-content: center;
+  padding: variables.$spacing;
+
+  app-product-list-component {
+    flex-basis: $product-list-width;
+    margin-right: variables.$spacing;
+  }
+
+  app-inventory-component {
+    flex-basis: $inventory-width;
+  }
+}

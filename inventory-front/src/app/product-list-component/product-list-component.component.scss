@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../../variables";
+@use "../../mixins";
+
+.product-list {
+  @include mixins.box-level-1;
+
+  h2 {
+    @include mixins.title-h2;
+    margin-bottom: variables.$spacing;
+  }
+}

@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "../../variables";
+@use "../../mixins";
+
+.inventory {
+  @include mixins.box-level-1;
+
+  h2 {
+    @include mixins.title-h2;
+    margin-bottom: variables.$spacing;
+    text-align: center;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    text-transform: capitalize;
+    border: variables.$body-border;
+    margin-bottom: 16px;
+  }
+
+  span {
+    display: inline-block;
+    text-align: center;
+    padding: variables.$unit;
+  }
+
+  .header {
+    border-bottom: variables.$body-border;
+  }
+}
